@@ -8,6 +8,7 @@ _"Azure Functions is a cloud service available on-demand that provides all the c
 | Function | Description |
 |----------|-------------|
 | [GrayscaleImages](GrayscaleImages) | Example HTTP Azure Function that will take in either a URL form encoded request payload containing `1..N` images or a single image using binary data. The function will transform the data into a gray scale image(s), and respond with an in-memory `zip` file that contains the results. These outputs could be stored to a local filesystem, ingested by another function or service and more! |
+| [MathParser](MathParser) | Takes in a JSON or URL form encoded payload containing a parameter, `calculation` that stores in a String mathematical expression such as, `2 + 2`. It will evaluate the request and perform the calculation if it can do so. |
 
 ## Prerequisites
 - Download [.NET Core](https://dotnet.microsoft.com/download) if you do not have it already and install it.
