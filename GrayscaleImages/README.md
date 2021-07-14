@@ -69,6 +69,6 @@ Supplies multiple images to be function. This utilizes the `include_timestamp` a
 `curl -X POST 'http://localhost:7071/api/GrayscaleImages?include_timestamp=N' -F 'default_image_name=bar_image.png' -F 'images[0]=@./test_img/patchy_input.png' -F 'images[1]=@./test_img/patchy_other.jpg' -o output-zip-multi-img-without-timestamps.zip`
 
 ## Resources
-- [Azure Create a local function project](https://docs.microsoft.com/en-us/azure/azure-functions/create-first-function-cli-python?tabs=azure-cli%2Cbash%2Cbrowser#create-a-local-function-project)
+- [Azure Create a Local Function Documentation](https://docs.microsoft.com/en-us/azure/azure-functions/create-first-function-cli-python?tabs=azure-cli%2Cbash%2Cbrowser#create-a-local-function-project)
 - [StackOverflow with Beneficial Information on Iterating over Multipart Files](https://stackoverflow.com/questions/55758899/azure-cloud-functions-http-file-upload-with-python)
 - [StackOverflow that has different ways to us the PIL Image Python Library](https://stackoverflow.com/questions/61790607/how-do-i-receive-multipart-form-data-in-azure-function)

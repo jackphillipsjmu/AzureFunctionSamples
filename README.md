@@ -12,7 +12,7 @@ _"Azure Functions is a cloud service available on-demand that provides all the c
 ## Prerequisites
 - Download [.NET Core](https://dotnet.microsoft.com/download) if you do not have it already and install it.
 - Install [Azure Function Core Tools](https://docs.microsoft.com/en-us/azure/azure-functions/functions-run-local?tabs=macos%2Ccsharp%2Cbash#v2) to your local machine.
-- For testing out using cURL make sure you have a terminal capable of running `curl` commands. If you don't your could utilize something such as Postman or other ways to send HTTP requests.
+- For testing out using cURL make sure you have a terminal capable of running `curl` commands. If you don't you could utilize something such as Postman or other ways to send HTTP requests.
 
 ## Resources
 - [Inspiration for this Repository is the Git Repo azure-functions-python-samples](https://github.com/yokawasa/azure-functions-python-samples/blob/master/README.md)
