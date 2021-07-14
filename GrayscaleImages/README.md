@@ -1,6 +1,17 @@
 # Gray Scale Images Azure Function
 Example HTTP Azure Function that will take in either a URL form encoded request payload containing `1..N` images or a single image using binary data. The function will transform the data into a gray scale image(s), and respond with an in-memory `zip` file that contains the results. These outputs could be stored to a local filesystem, ingested by another function or service and more!
 
+## Example Output
+### Input Image
+<p align="center">
+  <img src="resources/patchy_input.png">
+</p>
+
+### Output Grayscale Image
+<p align="center">
+  <img src="resources/example_output.png">
+</p>
+
 ## Prerequisites
 - Download [.NET Core](https://dotnet.microsoft.com/download) if you do not have it already and install it.
 - Install [Azure Function Core Tools](https://docs.microsoft.com/en-us/azure/azure-functions/functions-run-local?tabs=macos%2Ccsharp%2Cbash#v2) to your local machine.
