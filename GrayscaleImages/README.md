@@ -26,6 +26,7 @@ Example HTTP Azure Function that will take in either a URL form encoded request 
 }
 ```
 - Start the function: `func start`
+- Open a new terminal/command line window to initiate test requests and go into the `AzureFunctionSamples` directory.
 
 ## Test out the Functionality in Two Ways
 You can either submit a URL form encoded request to the HTTP trigger, or, you can also submit binary data for a single image. Each request can consume the following request parameters OR form parameters when applicable:
