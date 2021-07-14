@@ -39,28 +39,33 @@ _**Note**: Do not supply and form parameters when supplying binary data you can 
 
 #### No Request Parameters
 Supplies a PNG image to the function and does not specify any special parameters. These will then assume default values for each specified above which means it will not append a timestamp and will use the default name.  This produce a `zip` file, `output-binary-without-timestamp-and-default-name.zip` which when it is unzipped contains an image `default_img.png`
-- Command: `curl --data-binary @./test_img/patchy_input.png http://localhost:7071/api/GrayscaleImages -o output-binary-without-timestamp-and-default-name.zip`
+###### Command
+`curl --data-binary @./test_img/patchy_input.png http://localhost:7071/api/GrayscaleImages -o output-binary-without-timestamp-and-default-name.zip`
 
 #### With Request Parameters
 Supplies a PNG image to the function and specified that it wants to have the `default_image_name` set to `foo_image.png` and that we would like a timestamp in the filename since `include_timestamp` is set to `Y`. The result of this should make a `zip` file with the name `output-binary-with-timestamp-and-override-name.zip` and once unzipped a file similar to this name will be extracted `foo_image-20210714-153329.png`.
-- Command: `curl --data-binary @./test_img/patchy_input.png 'http://localhost:7071/api/GrayscaleImages?default_image_name=foo_image.png&include_timestamp=Y' -o output-binary-with-timestamp-and-override-name.zip`
+###### Command
+`curl --data-binary @./test_img/patchy_input.png 'http://localhost:7071/api/GrayscaleImages?default_image_name=foo_image.png&include_timestamp=Y' -o output-binary-with-timestamp-and-override-name.zip`
 
 ### Testing out Processing with Form Data
 
 #### Single Image as Form Parameter
 Supplies a PNG image to the function and specifies that the `images` form parameter is set to our image data we want to pass in. This will produce a `zip` file, `output-single-image.zip` containing a single image once unzipped, `patchy_input.png`/
 
-- Command: `curl -X POST 'http://localhost:7071/api/GrayscaleImages' -F 'images=@./test_img/patchy_input.png' -o output-single-image.zip`
+###### Command
+`curl -X POST 'http://localhost:7071/api/GrayscaleImages' -F 'images=@./test_img/patchy_input.png' -o output-single-image.zip`
 
 #### Multiple Images With Form Parameters
 Supplies multiple images to the function and provides the form parameter, `include_timestamp` which is set to `Y` so we will include timestamps in the output. Finally, an array of pictures is supplied with the `'images[0]=@./test_img/patchy_input.png'` and `'images[1]=@./test_img/patchy_other.jpg'` form parameters. Basically, it will create an array `images[]` and you put the relevant files in there, `images[index]=@/path/to/your/image.png`. This produces a `zip` file, `output-zip-multi-img-with-timestamps.zip` and once unzipped will have two files in the directory similarly names to, `patchy_input-20210714-160232.png` and `patchy_other-20210714-160232.jpg`
 
-- Command: `curl -X POST 'http://localhost:7071/api/GrayscaleImages' -F 'include_timestamp=Y' -F 'images[0]=@./test_img/patchy_input.png' -F 'images[1]=@./test_img/patchy_other.jpg' -o output-zip-multi-img-with-timestamps.zip`
+###### Command
+`curl -X POST 'http://localhost:7071/api/GrayscaleImages' -F 'include_timestamp=Y' -F 'images[0]=@./test_img/patchy_input.png' -F 'images[1]=@./test_img/patchy_other.jpg' -o output-zip-multi-img-with-timestamps.zip`
 
 #### Mixing Request and Form Parameters
 Supplies multiple images to be function. This utilizes the `include_timestamp` as a request parameter which is set to `N` so timestamps won't be appended to result file names. In addition, it has other form parameters that can be used that are also request parameters, namely, `default_image_name` which won't do much since we can determine the file names in the Python code but is good to show as an example. This produces a `zip` file, `output-zip-multi-img-without-timestamps.zip` and once unzipped will have two files in the directory, `patchy_input.png` and `patchy_other.jpg`
 
-- Command: `curl -X POST 'http://localhost:7071/api/GrayscaleImages?include_timestamp=N' -F 'default_image_name=bar_image.png' -F 'images[0]=@./test_img/patchy_input.png' -F 'images[1]=@./test_img/patchy_other.jpg' -o output-zip-multi-img-without-timestamps.zip`
+###### Command
+`curl -X POST 'http://localhost:7071/api/GrayscaleImages?include_timestamp=N' -F 'default_image_name=bar_image.png' -F 'images[0]=@./test_img/patchy_input.png' -F 'images[1]=@./test_img/patchy_other.jpg' -o output-zip-multi-img-without-timestamps.zip`
 
 ## Resources
 - [Azure Create a local function project](https://docs.microsoft.com/en-us/azure/azure-functions/create-first-function-cli-python?tabs=azure-cli%2Cbash%2Cbrowser#create-a-local-function-project)
