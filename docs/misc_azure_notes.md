@@ -1,5 +1,5 @@
 # Azure Databricks
-_Notes concerning Databricks concepts as they relate to the Landstar BCO Retention Initiative._
+_Notes concerning Azure and Databricks concepts._
 
 ## What is Azure Databricks?
 A data analytics platform optimized for the Azure cloud. It offers **two environments** for developing data intensive applications:
@@ -234,15 +234,6 @@ The activities in a pipeline define actions to perform on your data. Data Factor
 
 ### Pipeline
 A pipeline is a logical grouping of activities that together perform a task. For example, a pipeline could contain a set of activities that ingest and clean log data, and then kick off a mapping data flow to analyze the log data. The pipeline allows you to manage the activities as a set instead of each one individually. You deploy and schedule the pipeline instead of the activities independently.
-
-#### Questions
-- How did we store secrets in the key vault? Were these just manually inserted?
-- Is the Integration Runtime setup currently just used for SQL Server connections?
-  - Relates to 2 Linked Services both use the SVC-RETENTION-DB secret from the Key Vault.
-    - SqlServerLinkService: Is this the link to the Data Warehouse?
-    - SqlServerRetentionDB: Is this the link to the Retention Power App database?
-- Should we be using a Data Flow activity?
-- Did you ever use the Azure CLI, REST API or just the ADF console?
 
 ###### ADF Resources
 - [ADF Console](https://docs.microsoft.com/en-us/azure/data-factory/control-flow-execute-data-flow-activity)
