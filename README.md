@@ -1,6 +1,8 @@
 # Azure Function Samples
 Repository contains different solutions that can be solved using Azure Functions.
 
+> For Documentation on some of the Backing Components of Azure check out the [Miscellaneous Notes README](docs/misc_azure_notes.md)
+
 ## What is an Azure Function?
 _"Azure Functions is a cloud service available on-demand that provides all the continually updated infrastructure and resources needed to run your applications. You focus on the pieces of code that matter most to you, and Functions handles the rest. Functions provides serverless compute for Azure. You can use Functions to build web APIs, respond to database changes, process IoT streams, manage message queues, and more._"
 
